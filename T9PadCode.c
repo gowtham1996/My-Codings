@@ -39,13 +39,14 @@ void GetCharr(char m)
 {
     for(int i=0;i<10;i++)
       for(int j=0;j<4;j++)
+      {
           if(b[i][j]==m)
           {
               printf("\n%d",i);
 
               if(count!=0)
               {
-                  if(PreviousCount!=CurrentCount)
+                  if(PreviousCount!=i)
                   {
                       PreviousCount=CurrentCount;
                       CurrentCount=i;
@@ -55,10 +56,9 @@ void GetCharr(char m)
               else
               {
                   count++;
-                  PreviousCount=i;
-                  CurrentCount=i;
+              
               }
-              return ;
-          }
-      
+                        }
+      PreviousCount=CurrentCount;
+                      CurrentCount=i; }
 }
